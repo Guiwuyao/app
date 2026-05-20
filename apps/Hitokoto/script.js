@@ -1,13 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function initHitokoto() {
     const textElement = document.getElementById('hitokoto-text');
     const authorElement = document.getElementById('hitokoto-author');
     const linkElement = document.getElementById('hitokoto-link');
     const refreshBtn = document.getElementById('refresh-btn');
     const copyBtn = document.getElementById('copy-btn');
     
+    if (!textElement || !refreshBtn) return;
+
     let currentHitokotoText = ''; // 保存当前文本用于复制
     let copyTimeout;
     const originalCopyText = copyBtn.textContent;
+
+    // 清理机制
+    if (typeof window.addPageCleanup === 'function') {
+        window.addPageCleanup(() => {
+            if (copyTimeout) clearTimeout(copyTimeout);
+        });
+    }
 
     const API_URL = 'https://api-hitokoto.wely.fun/api';
 
@@ -99,4 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. 初次加载时自动获取一次
     fetchHitokoto();
-});
+})();

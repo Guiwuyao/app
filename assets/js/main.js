@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function initIndex() {
     const gridContainer = document.getElementById("tools-grid");
 
     if (!gridContainer) return;
@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const renderCards = () => {
         // 清空容器（以防重复渲染）
         gridContainer.innerHTML = "";
+
+        if (typeof TOOLS_DATA === 'undefined') return;
 
         TOOLS_DATA.forEach(tool => {
             // 创建 a 标签作为卡片主体
@@ -26,4 +28,4 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     renderCards();
-});
+})();

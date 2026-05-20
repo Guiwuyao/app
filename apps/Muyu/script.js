@@ -1,6 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function initMuyu() {
     const avatar = document.getElementById("avatar");
     const sound = document.getElementById("sound");
+    
+    if (!avatar || !sound) return;
+
     const praises = [
         "真棒！🎉",
         "哈哈哈哈 😂",
@@ -69,4 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const touch = e.touches[0];
         triggerPraise(touch.pageX, touch.pageY);
     }, { passive: false });
-});
+})();

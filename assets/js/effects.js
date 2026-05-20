@@ -105,3 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 600); // 与 CSS 动画时间一致 (0.6s)
     });
 });
+
+/* ==============================================
+   3. PJAX (Swup) 初始化与清理机制
+   ============================================== */
+// 提供一个全局注册清理函数的机制，防止切换页面后 setTimeout/setInterval 继续运行
+window.pageCleanups = [];
+window.addPageCleanup = (fn) => window.pageCleanups.push(fn);
+
+// 立即初始化 Swup (因为相关 js 已经同步加载)
+if (typeof Swup !== 'undefined' && typeof SwupScriptsPlugin !== 'undefined' && !window.swup) {
+    window.swup = new Swup({
+        plugins: [new SwupScriptsPlugin()]
+    });
+    
+    // 每次页面内容替换前，执行当前页面的清理逻辑
+    window.swup.hooks.on('content:replace', () => {
+        window.pageCleanups.forEach(fn => {
+            if (typeof fn === 'function') fn();
+        });
+        window.pageCleanups = []; // 清空，准备迎接新页面
+    });
+}

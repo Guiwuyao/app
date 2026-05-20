@@ -1,10 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function initBreath() {
     const textDisplay = document.getElementById('text-display');
     const outerCircle = document.getElementById('outer-circle');
     const startBtn = document.getElementById('start-btn');
     
+    // 如果不在该页面则返回
+    if (!textDisplay || !outerCircle || !startBtn) return;
+
     let isBreathing = false;
     let breathTimeout;
+
+    // 清理机制
+    if (typeof window.addPageCleanup === 'function') {
+        window.addPageCleanup(() => {
+            clearTimeout(breathTimeout);
+            isBreathing = false;
+        });
+    }
     
     // 4-7-8 呼吸法时长 (毫秒)
     const INHALE_TIME = 4000;
@@ -61,4 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
             breathCycle();
         }
     });
-});
+})();

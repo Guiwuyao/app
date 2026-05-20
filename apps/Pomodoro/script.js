@@ -1,13 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function initPomodoro() {
     const timeDisplay = document.getElementById('time-display');
     const toggleBtn = document.getElementById('toggle-btn');
     const resetBtn = document.getElementById('reset-btn');
     const modeWorkBtn = document.getElementById('mode-work');
     const modeBreakBtn = document.getElementById('mode-break');
 
+    if (!timeDisplay || !toggleBtn) return;
+
     let timer = null;
     let isRunning = false;
     let isWorkMode = true;
+
+    // 清理机制
+    if (typeof window.addPageCleanup === 'function') {
+        window.addPageCleanup(() => {
+            clearInterval(timer);
+            isRunning = false;
+        });
+    }
 
     const WORK_TIME = 25 * 60; // 25 分钟
     const BREAK_TIME = 5 * 60; // 5 分钟
@@ -111,4 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始化显示
     updateDisplay();
-});
+})();

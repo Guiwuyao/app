@@ -1,11 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function initInspiration() {
     const displayElement = document.getElementById('question-display');
     const drawBtn = document.getElementById('draw-btn');
     const copyBtn = document.getElementById('copy-btn');
     const countElement = document.getElementById('total-count');
 
+    // 确保我们在当前页面
+    if (!displayElement || !drawBtn || !copyBtn) return;
+
     let copyTimeout;
     const originalCopyText = copyBtn.textContent;
+
+    // 清理机制：防止切换页面后定时器仍然触发
+    if (typeof window.addPageCleanup === 'function') {
+        window.addPageCleanup(() => {
+            if (copyTimeout) clearTimeout(copyTimeout);
+        });
+    }
 
     // 1. 初始化检查
     if (typeof questions === 'undefined' || !Array.isArray(questions)) {
@@ -59,4 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 首次加载也可以自动抽一个（可选）
     // drawQuestion(); 
-});
+})();
