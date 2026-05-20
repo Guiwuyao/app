@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 替换为具体工具的标题 -->
+    <title>工具名称 | Toolbox</title>
+    <!-- 统一引入字体与全局样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    
+    <!-- 引入该工具专属的局部样式（保证独立性） -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 粒子特效画布 -->
+    <canvas id="particle-canvas"></canvas>
+    <!-- 保持动态背景一致性 -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <!-- 统一的优雅返回导航 -->
+        <nav class="top-nav">
+            <a href="../../index.html" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </nav>
+
+        <!-- ============================================== -->
+        <!-- 下方编写该子工具的专属内容 -->
+        <!-- ============================================== -->
+        <div class="tool-content">
+            <h1>这是子工具的标题</h1>
+            <p>在这里编写你的功能 HTML...</p>
+        </div>
+
+    </main>
+
+    <!-- 引入专属JS -->
+    <script src="script.js"></script>
+    <!-- 引入动态特效脚本 -->
+    <script src="../../assets/js/effects.js"></script>
+</body>
+</html>

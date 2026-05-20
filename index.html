@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbox | 沉浸式工具集</title>
+    <!-- 引入霞鹜文楷 (Lite版本提升加载速度) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <!-- 引入全局样式 -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+</head>
+<body>
+    <!-- 粒子特效画布 -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- 动态背景，用于衬托毛玻璃效果 -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <header class="hero">
+            <h1 class="title">Toolbox.</h1>
+            <p class="subtitle">化繁为简，静心创造。你的专属工具聚合地。</p>
+        </header>
+
+        <!-- 卡片容器，JS 将会把生成的毛玻璃卡片注入到这里 -->
+        <div id="tools-grid" class="grid-container"></div>
+    </main>
+
+    <!-- 引入数据与渲染脚本 -->
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <!-- 引入动态特效脚本 -->
+    <script src="./assets/js/effects.js"></script>
+</body>
+</html>

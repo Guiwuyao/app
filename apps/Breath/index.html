@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禅定呼吸 | Toolbox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <nav class="top-nav">
+            <a href="../../index.html" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </nav>
+
+        <div class="tool-content">
+            <header class="app-header">
+                <h1>禅定呼吸</h1>
+                <p>跟随光晕律动，找回内心的平静 (4-7-8 呼吸法)</p>
+            </header>
+
+            <div class="breath-container">
+                <div class="circle-outer" id="outer-circle"></div>
+                <div class="circle-inner" id="text-display">准备</div>
+            </div>
+
+            <div class="actions">
+                <button id="start-btn" class="glass-btn primary-btn">开始</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="../../assets/js/effects.js"></script>
+</body>
+</html>

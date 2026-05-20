@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一言 | Toolbox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <!-- 统一的返回导航 -->
+        <nav class="top-nav">
+            <a href="../../index.html" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </nav>
+
+        <div class="tool-content">
+            <header class="app-header">
+                <h1>一言 (Hitokoto)</h1>
+                <p>总有一句话，能触动你的心弦。</p>
+            </header>
+
+            <main class="glass-card hitokoto-card">
+                <div class="content-wrapper">
+                    <span class="quote-mark">“</span>
+                    <p id="hitokoto-text">正在连接宇宙电波...</p>
+                    <span class="quote-mark right">”</span>
+                </div>
+                <div class="author-section">
+                    <p id="hitokoto-author"></p>
+                    <a id="hitokoto-link" href="#" target="_blank" title="查看出处详细信息" style="display: none;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </main>
+
+            <div class="actions">
+                <button id="refresh-btn" class="glass-btn primary-btn">✨ 刷新</button>
+                <button id="copy-btn" class="glass-btn secondary-btn">📋 复制</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="../../assets/js/effects.js"></script>
+</body>
+</html>

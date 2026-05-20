@@ -1,0 +1,11 @@
+/* 专门用于当前工具的样式，不会污染全局 */
+.tool-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--glass-shadow);
+    color: #fff;
+}

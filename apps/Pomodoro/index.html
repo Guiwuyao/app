@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简番茄钟 | Toolbox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <nav class="top-nav">
+            <a href="../../index.html" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </nav>
+
+        <div class="tool-content">
+            <header class="app-header">
+                <h1>极简番茄钟</h1>
+                <p>舍弃一切干扰，专注于当下的任务</p>
+            </header>
+
+            <div class="timer-container glass-card">
+                <div class="mode-switch">
+                    <button id="mode-work" class="mode-btn active">专注</button>
+                    <button id="mode-break" class="mode-btn">休息</button>
+                </div>
+                <div class="time-display" id="time-display">25:00</div>
+            </div>
+
+            <div class="actions">
+                <button id="toggle-btn" class="glass-btn primary-btn">开始</button>
+                <button id="reset-btn" class="glass-btn">重置</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="../../assets/js/effects.js"></script>
+</body>
+</html>
