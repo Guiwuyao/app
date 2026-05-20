@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>666个写作灵感 | Toolbox</title>
+    <!-- 统一引入字体与全局样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    
+    <!-- 引入专属样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 粒子特效画布 -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <main class="container">
+        <!-- 统一的返回导航 -->
+        <nav class="top-nav">
+            <a href="../../index.html" class="btn-back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                返回首页
+            </a>
+        </nav>
+
+        <div class="tool-content">
+            <header class="app-header">
+                <h1>灵感抽取</h1>
+                <p>从 666 个创意写作题目中随机获取一个</p>
+            </header>
+
+            <main class="glass-card display-card">
+                <div class="content-wrapper">
+                    <span class="quote-mark">“</span>
+                    <p id="question-display">点击下方按钮开始抽取...</p>
+                    <span class="quote-mark right">”</span>
+                </div>
+            </main>
+
+            <div class="actions">
+                <button id="draw-btn" class="glass-btn primary-btn">✨ 抽取新灵感</button>
+                <button id="copy-btn" class="glass-btn secondary-btn" style="display:none;">📋 复制题目</button>
+            </div>
+            
+            <footer>
+                <p>共收录 <span id="total-count">0</span> 个写作练习</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+    <!-- 引入动态特效脚本（可选） -->
+    <script src="../../assets/js/effects.js"></script>
+</body>
+</html>

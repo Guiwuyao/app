@@ -1,0 +1,123 @@
+/* 移除原本污染全局的 body 样式，使用 tool-content 容器包裹 */
+
+.tool-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.app-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* 复用一些全局毛玻璃作为展示面板 */
+.display-card {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 3rem 2rem;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#question-display {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.quote-mark.right {
+    top: auto;
+    bottom: -80px;
+    left: auto;
+    right: -20px;
+    transform: rotate(180deg);
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/* 毛玻璃质感的按钮 */
+.glass-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-btn:active {
+    transform: translateY(0);
+}
+
+.primary-btn {
+    background: rgba(99, 102, 241, 0.6); /* 使用主色调的高亮版本 */
+    border-color: rgba(99, 102, 241, 0.8);
+}
+.primary-btn:hover {
+    background: rgba(99, 102, 241, 0.8);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* 淡入动画 */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
