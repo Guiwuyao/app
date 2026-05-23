@@ -116,6 +116,7 @@ window.addPageCleanup = (fn) => window.pageCleanups.push(fn);
 // 立即初始化 Swup (因为相关 js 已经同步加载)
 if (typeof Swup !== 'undefined' && typeof SwupScriptsPlugin !== 'undefined' && typeof SwupPreloadPlugin !== 'undefined' && !window.swup) {
     window.swup = new Swup({
+        animationSelector: '[class*="transition-fade"]', // 明确告诉 Swup 监控带有此类的元素动画结束
         plugins: [
             new SwupScriptsPlugin(),
             new SwupPreloadPlugin() // 引入预加载插件

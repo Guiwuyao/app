@@ -186,26 +186,30 @@ body {
 /* =========================================
    7. Swup PJAX 过渡动画 (柔和的景深滑入切换)
    ========================================= */
-/* 正常状态 (默认渲染完成的状态) */
+/* 正常状态 (默认渲染完成且处于视口中的状态) */
 .transition-fade {
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                filter 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0px);
 }
 
-/* 离开旧页面时的状态 (向上滑动、缩小、淡出并模糊) */
-html.is-animating.is-leaving .transition-fade {
+/* 只要 HTML 被打上 is-animating，容器就开始不可见并模糊 */
+html.is-animating .transition-fade {
     opacity: 0;
-    transform: translateY(-20px) scale(0.98);
     filter: blur(5px);
 }
 
+/* 离开旧页面时的状态 (向上滑动、缩小) */
+html.is-leaving .transition-fade {
+    transform: translateY(-20px) scale(0.98);
+}
+
 /* 准备渲染新页面时的初始状态 (向下滑动、缩小、准备淡入) */
-html.is-animating.is-rendering .transition-fade {
-    opacity: 0;
+html.is-rendering .transition-fade {
     transform: translateY(20px) scale(0.98);
-    filter: blur(5px);
 }
 
 .click-ripple {
